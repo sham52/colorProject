@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { useState } from 'react';
+import Box from './Box'
+import Input from './Input';
 function App() {
+  const [color, setColor] = useState('');
+  const [hexValue, setHexValue] = useState('');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Box
+        color={color}
+        hexValue={hexValue}
+      />
+      <div className="inputContainer">
+        <Input
+          hexValue={hexValue}
+          setHexValue={setHexValue}
+          color={color}
+          setColor={setColor}
+        />
+
+      </div>
+
     </div>
   );
 }
+App.defaultProps = {
+  color: "empty"
+}
+
 
 export default App;
