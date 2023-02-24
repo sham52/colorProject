@@ -1,13 +1,17 @@
 import React from 'react'
-const Box = ({ hexValue, color }) => {
+
+const Box = ({ isDark, hexValue, color }) => {
+
+
 
     const style = {
         backgroundColor: color,
+        color: isDark ? "#000" : "#FFF"
     }
 
     return (
         <div className="box" style={style} >
-            <p>{color ? color : "Empty Value"}</p>
+            <p>{color ? color.toUpperCase() : "Empty Value"}</p>
             <p>{hexValue ? hexValue : null}</p>
         </div>
     )

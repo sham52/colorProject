@@ -39,3 +39,7 @@ code {
   flex-direction: row;
   justify-content: center;
 }
+.toggle {
+  margin: 10px;
+  padding: 10px;
+}
